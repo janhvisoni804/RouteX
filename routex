@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: ./routex <hostname>"
+    exit 1
+fi
+
+TARGET=$1
+
+export ROUTEX_HOSTNAME=$TARGET
+export DYLD_INSERT_LIBRARIES=$(pwd)/tord.so 
+export DYLD_FORCE_FLAT_NAMESPACE=1 
+
+echo "🚀 Launching RouteX (HTTPS Mode)..."
+
+./client_ssl $TARGET 443

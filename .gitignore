@@ -1,0 +1,14 @@
+# --- Build Artifacts (Do NOT commit these) ---
+*.so
+*.o
+*.out
+*.dSYM/
+
+# --- Executables ---
+client
+client_ssl
+
+# --- OS & Editor Clutter ---
+.DS_Store
+.vscode/
+.idea/
